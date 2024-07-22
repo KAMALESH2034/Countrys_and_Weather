@@ -1,0 +1,79 @@
+async function foo(){
+
+    var container1 = document.createElement("div");
+    container1.setAttribute("class","container");
+
+    var row= document.createElement("div");
+    row.setAttribute("class","row");
+
+    var heading = document.createElement("h1")
+    heading.setAttribute("class","head")
+    heading.innerHTML = "All Countries Weather";
+
+    try{
+        let data = await fetch("https://restcountries.com/v3.1/all");
+        let resp = await data.json();
+        console.log(resp);
+            resp.forEach(element => {
+                let col = document.createElement("div");
+                col.setAttribute("class","col-lg-4 col-md-4 col-sm-12 mb-3 mt3");
+
+                var card = document.createElement("div");
+                card.setAttribute("class","card text-center");
+                card.setAttribute("style","border:0; box-shadow:1px 1px 2px #adaaaa");
+
+                let cardHead = document.createElement("div")
+                cardHead.setAttribute("class","card-header text-center");
+                cardHead.innerHTML=element.name.common;
+                cardHead.setAttribute("style","background: #0c244d; color:white");
+
+                var cardBody = document.createElement("div");
+                 cardBody.classList.add("card-body");
+                cardBody.setAttribute("style","font-size:12px;background: rgb(232,239,162);background: linear-gradient(84deg, rgba(232,239,162,1) 13%, rgba(210,103,255,0.801733193277311) 48%, rgba(31,250,255,0.7905287114845938) 82%);")
+                
+                var cardFlag = document.createElement("img");
+                cardFlag.setAttribute("class","card-img-top");
+                cardFlag.src = element.flags.png;
+                cardFlag.setAttribute("style","width:150px; heigth:100px; margin-bottom:15px");
+
+                var cardCaps = document.createElement("div");
+                cardCaps.setAttribute("class","card-text");
+                cardCaps.innerHTML = `Capital : ${element.capital}`;
+
+
+               
+               // cardcaps.classList.add("card-text");
+              
+                
+                var cardRegion = document.createElement("div");
+                cardRegion.setAttribute("class","card-text");
+                cardRegion.innerHTML = `Region : ${element.region}`;
+
+                var cardlatlang = document.createElement("div");
+                cardlatlang.setAttribute("class","card-text");
+                cardlatlang.innerHTML = `Lat & lang : ${element.latlng}`;
+
+                var cardCode = document.createElement("div");
+                cardCode.setAttribute("class","card-text");
+                cardCode.innerHTML = `Country Code : ${element.cioc}`;
+
+                var cardBtn = document.createElement("button");
+                cardBtn.setAttribute("class","weather-btn btn btn-outline-success");
+                cardBtn.innerHTML = `Click for Weather`;
+
+
+                cardBody.appendChild(cardFlag, cardCaps,cardCode, cardRegion, cardlatlang);
+                card.appendChild(cardHead,cardBody);
+                col.appendChild(card);
+                row.appendChild(col);
+            });
+    }
+    catch(error) {
+        console.log(error);
+      }
+
+    container1.append(heading,row);
+    document.body.appendChild(container1);
+}
+
+foo();
