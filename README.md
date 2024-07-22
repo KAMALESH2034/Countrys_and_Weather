@@ -10,10 +10,10 @@ In this repository a webpage is displayed by fetching the data of all countries 
 
 ## API's Used :
 
-1. REST country API:     [https://restcountries.com/v3.1/all]()
-2. Open Weather API:   [https://openweathermap.org/api]()
+1. REST country API:     [https://restcountries.com/v3.1/all](https://restcountries.com/v3.1/all)
+2. Open Weather API:   [https://openweathermap.org/api](https://openweathermap.org/api)
 
 ## Deployment Link:
 
-* thru' GitHub Page  :   [https://kamalesh2034.github.io/Countrys_and_Weather/]()
-* thru' Netlify :		  [ https://restcountryandweather.netlify.app/]()
+* thru' GitHub Page  :   [https://kamalesh2034.github.io/Countrys_and_Weather/](https://kamalesh2034.github.io/Countrys_and_Weather/)
+* thru' Netlify :		  [ https://restcountryandweather.netlify.app/](https://restcountryandweather.netlify.app/)
