@@ -15,5 +15,5 @@ In this repository a webpage is displayed by fetching the data of all countries 
 
 ## Deployment Link:
 
-* thru' GitHub Page  :
-* thru' Netlify :
+* thru' GitHub Page  :   [https://kamalesh2034.github.io/Countrys_and_Weather/]()
+* thru' Netlify :		  [ https://restcountryandweather.netlify.app/]()
